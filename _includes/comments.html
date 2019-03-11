@@ -1,1 +1,3 @@
-<div class="fb-comments" data-href="{{ refererUri }}" data-width="700" data-numposts="10"></div>
+{% if site.facebook_app %}
+    <div class="fb-comments" data-href="{{ refererUri }}" data-width="700" data-numposts="10"></div>
+{% endif %}

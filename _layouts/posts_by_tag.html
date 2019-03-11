@@ -11,7 +11,7 @@ layout: default
         {% if page.name == tag.name %}
             <button class="btn btn-sm btn-default active">{{ tag.title }}</button>
         {% else %}
-            <a href="/tag/{{ tag.name }}" class="btn btn-sm btn-default">{{ tag.title }}</a>
+            <a href="{{ site.baseurl }}/tag/{{ tag.name }}" class="btn btn-sm btn-default">{{ tag.title }}</a>
         {% endif %}
     {% endfor %}
     <hr />

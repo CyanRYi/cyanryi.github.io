@@ -7,7 +7,7 @@
             {% for t in site.tags %}
                 {% if t.name == tag %}
                     {% unless isFirst %}, {% endunless %}
-                    <a href="/tag/{{ t.name }}" title="{{ t.title }}"> {{ t.title }} </a>
+                    <a href="{{ site.baseurl }}/tag/{{ t.name }}" title="{{ t.title }}"> {{ t.title }} </a>
                     {% assign isFirst = false %}
                 {% endif %}
             {% endfor %}
