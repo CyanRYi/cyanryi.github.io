@@ -1,0 +1,60 @@
+---
+layout: en_layout
+---
+{% assign language = 'en' %}
+<div class="col-sm-3">
+    <div class="fixed-condition">
+        <a href="/en"><img class="profile-avatar" src="{{ site.avatar }}" height="120px" width="160" /></a>
+        <h1 class="author-name">{{ site.author }}</h1>
+        <div class="profile-about">
+            {{ site.about }}
+        </div>
+        <hr />
+        <ul class="sidebar-nav">
+            <strong>Navigation</strong>
+            <li><a href="/en">Home</a></li>
+
+            {% for i in site.urls %}
+            <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+            {% endfor %}
+            <hr/>
+
+            <strong>Category</strong>
+            {% for c in site.categories %}
+                {% if c.en_title %}
+                    <li><a class="about" href="/category/{{ c.name }}">{{ c.en_title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        <hr/>
+        <div class="tags">
+            {% for t in site.tags %}
+                {% if t.en_title %}
+                    <a href="/tag/{{ tag.name }}" title="{{ tag.title }}"><strong><i>{{ tag.en_title }}</i></strong></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <hr/>
+        <div class="search" id="js-search">
+            <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
+            <ul class="search__results" id="js-search__results"></ul>
+        </div>
+    </div>
+    <!-- end /.fixed-condition -->
+</div>
+<div class="col-sm-8 col-offset-1 main-layout">
+    <div id="home">
+        <hr />
+        <ol class="posts">
+            {% assign filtered_posts = site.posts | where: 'lang', 'en' %}
+            {% for post in filtered_posts %}
+            {% include post_link.html %}
+            {% endfor %}
+        </ol>
+    </div><!-- end #home -->
+    {% include footer.html %}
+</div>
+<!-- end /.col-sm-8 -->
+
+
+

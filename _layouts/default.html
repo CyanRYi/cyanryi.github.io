@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="/images/favicon.ico" />
+      <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
+      <meta name="author" content="{{ site.author }}" />
+      <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
+
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+      <meta content="{{ site.title }}" property="og:site_name">
+
+      {% if page.noindex %}
+        <meta name="robots" content="noindex">
+      {% endif %}
+
+      {% if page.title %}
+        <meta content="{{ page.title }}" property="og:title">
+        <meta content="article" property="og:type">
+      {% else %}
+        <meta content="{{ site.name }}" property="og:title">
+        <meta content="website" property="og:type">
+      {% endif %}
+
+      {% if page.description %}
+        <meta content="{{ page.description }}" property="og:description">
+      {% else %}
+        <meta content="{{ site.description }}" property="og:description">
+      {% endif %}
+
+      {% if page.url %}
+        <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+      {% endif %}
+
+      {% if page.date %}
+        <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+        <meta content="{{ site.url }}/about/" property="article:author">
+      {% endif %}
+
+      {% if page.image %}
+        <meta content="{{ site.url }}/images/posts/{{ page.image }}" property="og:image">
+      {% else %}
+        <meta content="{{ site.url }}{{ site.avatar }}" property="og:image">
+      {% endif %}
+
+      {% if page.categories %}
+        {% for category in page.categories limit:1 %}
+            <meta content="{{ category }}" property="article:section">
+        {% endfor %}
+      {% endif %}
+
+      {% capture pageTags %}{% endcapture %}
+
+      {% if page.tags %}
+        {% for tag in page.tags %}
+            {% for t in site.tags %}
+                {% if t.name == tag %}
+                    <meta content="{{ t.title }}" property="article:tag">
+                    {% capture pageTags %}{{t.title}}, {{pageTags}}{% endcapture %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+      {% endif %}
+
+      {% if page.title %}
+        <meta name="keywords" content="{{ page.title }},{{ pageTags }}" />
+      {% else %}
+        <meta name="keywords" content="dev, devloper, spring, oop, developer philosophy" />
+      {% endif %}
+
+      <!-- Font awesome icons -->
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+      <!-- syntax highlighting CSS -->
+      <link rel="stylesheet" href="/css/syntax.css">
+      <!-- Bootstrap core CSS -->
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/css/super-search.css">
+      <link rel="stylesheet" href="/css/thickbox.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <!-- FB header reference -->
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=122275605125275"></script>
+
+      {% include analytics.html %}
+  </head>
+
+  <body>
+  <div class="container">
+      <div class="col-sm-3">
+          <div class="language">
+              Language :
+              <a href="{{ site.url }}">
+                  <img class="flag" src="/images/kr.svg" alt="Lang-ko_kr" />
+              </a>
+              <a href="{{ site.url }}/en">
+                  <img class="flag" src="/images/us.svg" alt="Lang-en_us" />
+              </a>
+          </div>
+          {% include sidebar.html %}
+      </div>
+      <div class="col-sm-8 col-offset-1 main-layout">
+          {{ content }}
+          {% include footer.html %}
+      </div>
+      <!-- end /.col-sm-8 -->
+    </div>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/super-search.js"></script>
+      <script src="/js/thickbox-compressed.js"></script>
+  </body>
+</html>
