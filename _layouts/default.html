@@ -94,20 +94,53 @@
   <body>
   <div class="container">
       <div class="col-sm-3">
-          <div class="language">
-              Language :
-              <a href="{{ site.baseurl }}">
-                  <img class="flag" src="{{ site.baseurl }}/images/kr.svg" alt="Lang-ko_kr" />
-              </a>
-              <a href="{{ site.baseurl }}/en">
-                  <img class="flag" src="{{ site.baseurl }}/images/us.svg" alt="Lang-en_us" />
-              </a>
+          <div class="fixed-condition">
+              <a href="{{ site.url }}"><img class="profile-avatar" src="{{ site.avatar }}" height="120px" width="160" /></a>
+              <h1 class="author-name">{{ site.author }}</h1>
+              <div class="profile-about">
+                  {{ site.about }}
+              </div>
+              <hr />
+              <ul class="sidebar-nav">
+                  <strong>Navigation</strong>
+                  <li><a href="{{ site.url }}">Home</a></li>
+
+                  {% for i in site.urls %}
+                  <li><a class="about" href="{{ i.url }}">{{ i.text }}</a></li>
+                  {% endfor %}
+                  <hr/>
+
+                  <strong>Category</strong>
+                  {% for c in site.categories %}
+                  <li><a class="about" href="{{ c.url }}">{{ c.title }}</a></li>
+                  {% endfor %}
+              </ul>
+              <hr/>
+              <div class="tags">
+                  {% for t in site.tags %}
+                  <a href="{{ t.url }}" title="{{ t.title }}"><strong><i>{{ t.title }}</i></strong></a>
+                  {% endfor %}
+              </div>
+              <hr/>
+              <div class="search" id="js-search">
+                  <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
+                  <ul class="search__results" id="js-search__results"></ul>
+              </div>
           </div>
-          {% include sidebar.html %}
+          <!-- end /.fixed-condition -->
       </div>
       <div class="col-sm-8 col-offset-1 main-layout">
           {{ content }}
-          {% include footer.html %}
+          <footer>
+              &copy; {{ site.author }}
+              {% if site.github %}
+              - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
+              {% endif %}
+              <div class="btn-github" style="float:right;">
+                  <iframe src="https://ghbtns.com/github-btn.html?user=cyanryi&repo=cyanryi.github.io&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+                  <iframe src="https://ghbtns.com/github-btn.html?user=cyanryi&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+              </div>
+          </footer>
       </div>
       <!-- end /.col-sm-8 -->
     </div>
