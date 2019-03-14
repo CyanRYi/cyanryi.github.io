@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<header class="post-header">
+    <h1 class="post-title">Articles by Category: {{ page.title }}</h1>
+</header>
+<div class="post-content">
+    {% for category in site.category %}
+        {% if page.name == category.name %}
+            <span class="mdl-chip">
+                <span class="mdl-chip__text"><strong>{{ category.title }}</strong></span>
+            </span>
+        {% else %}
+            <a href="{{ site.url}}{{ category.url }}" class="mdl-chip tag-button">
+                <span class="mdl-chip__text">{{ category.title }}</span>
+            </a>
+        {% endif %}
+    {% endfor %}
+    <hr/>
+    <ul class="mdl-list">
+        {% for post in site.posts %}
+            {% if post.category == page.name %}
+                {% include post_link.html %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% include language_selector.html %}

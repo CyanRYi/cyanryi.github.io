@@ -1,9 +1,7 @@
 ---
-layout: post
 title: 소크라테스와 아기발걸음
-categories: [hestory]
+category: hestory
 tags: [agile, philosophy]
-lang: [ko]
 ---
 
 이 글은 [popit - 애자일이 중요한 것이 아니다(안영회)](https://www.popit.kr/%EC%95%A0%EC%9E%90%EC%9D%BC%EC%9D%B4-%EC%A4%91%EC%9A%94%ED%95%9C-%EA%B2%83%EC%9D%B4-%EC%95%84%EB%8B%88%EB%8B%A4/) 여기서부터 시작되는 글입니다. 미리 읽고 보셔야 편합니다.

@@ -1,9 +1,7 @@
 ---
-layout: post
 title: HandlerMethodArgumentResolver
-categories: [spring]
+category: spring
 tags: [spring]
-lang: [ko]
 ---
 
 [HandlerMethodArgumentResolver](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/method/support/HandlerMethodArgumentResolver.html)라는 녀석이 있다.
@@ -145,11 +143,11 @@ curl -X GET \
   -H 'Postman-Token: c61ab1b8-7667-4d71-a79d-b59193191ea6'
 {% endhighlight %}
 
-'''
+```
 2019-03-05 17:36:10.428  INFO 21272 --- [io-12001-exec-3] tech.sollabs.webdemo.TestResource        : page size : 51
 2019-03-05 17:36:10.428  INFO 21272 --- [io-12001-exec-3] tech.sollabs.webdemo.TestResource        : page number : 2
 2019-03-05 17:36:10.429  INFO 21272 --- [io-12001-exec-3] tech.sollabs.webdemo.TestResource        : parameter : PARAMETER
-'''
+```
 
 있는지만 알아두면 다양하게 응용하기도 좋고 전역 설정을 하기도 좋다.(가장 좋은건 쓰기 쉽다.)
 

@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-<div id="home">
-    <hr />
-    <ol class="posts">
+<div class="post-content">
+    <ul class="mdl-list">
         {% for post in site.posts %}
             {% include post_link.html %}
         {% endfor %}
-    </ol>
-</div><!-- end #home -->
+    </ul>
+</div>
+{% include language_selector.html %}
+

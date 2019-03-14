@@ -1,9 +1,7 @@
 ---
-layout: post
-title: byType DI로 복수의 Bean 받기
-categories: [spring]
+title: Multiple Dependency Injection on spring framework
+category: spring
 tags: [spring]
-lang: [ko]
 ---
 
  Spring에서의 DI는 Collection, List, Set. Array 등으로 N개의 Bean을 받을 수 있다.

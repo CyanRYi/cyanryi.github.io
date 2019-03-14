@@ -1,0 +1,222 @@
+body {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  background: url("/static/img/subtle_dots.png");
+  line-height: 1.5em;
+  font-weight: 300;
+  font-size: 16px;
+  color: #666;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #F7F1F1;
+  border-bottom: 1px solid #fff;
+}
+span.time, span.categories, span.tags {
+  color: #4A4A4A;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+h1, h2, h3 {
+  color: #696969;
+  font-weight: normal;
+}
+h1 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+h2, h3 {
+  margin-bottom: 5px;
+}
+a, a:link, a:active {
+  text-decoration: none;
+  color: #3c763d;
+}
+a:hover {
+  color: #1e0010;
+  text-decoration: underline;
+}
+a.footnote {
+  color: #080808;
+  font-style: italic;
+  text-decoration: underline;
+}
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 15px;
+    border-left: 5px solid #eee;
+}
+blockquote::before, blockquote::after {
+    content: "";
+    margin: 0;
+}
+blockquote p {
+    margin: 0 0 10px;
+}
+blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
+    margin-bottom: 0;
+}
+footer {
+    border-top: 1px solid #F7F1F1;
+    width: 100%;
+    height: 10px;
+    margin-top: 10px;
+    margin-bottom: 3em;
+    padding-top: 10px;
+    color: #C2C2C2;
+    font-size: 13px;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+.float-right {
+  float: right;
+}
+/* Left column */
+img.profile-avatar {
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    -ms-border-radius: 150px;
+    -o-border-radius: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul.sidebar-nav {
+    padding-inline-start: 0px;
+}
+.sidebar-nav li {
+  margin: 0;
+  list-style: none;
+}
+.sidebar-nav li::before {
+  content: "»";
+  margin-right: .5em;
+}
+
+/* Content */
+div.content pre {
+  background: #333333;
+  padding: 10px;
+  color: #FFF;
+  overflow-x: auto;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-size: 12px;
+  border: none;
+}
+
+.post-content img,
+.content img {
+  max-width: 100%
+}
+.post-content ul li span::before {
+    content: "»";
+}
+.post-content .mdl-chip {
+    margin: 0 3px 0 3px;
+}
+.post-content a.mdl-chip {
+    background-color: #0d47a1;
+    color: #e0f2f1;
+}
+.mdl-menu {
+    width: 160px;
+}
+.btn-github iframe {
+    display: inline-block;
+    width: 150px;
+    border: none;
+}
+/* search css */
+#js-search {
+    width: 500px;
+    max-width: 90%;
+}
+input#search__input {
+    max-width: calc(90% - 24px);
+    width: 400px;
+    display: inline-block;
+}
+div#search__outline {
+    overflow: visible;
+    position: relative;
+    z-index: 989;
+    max-width: calc(90% - 24px);
+    width: 400px;
+    display: flex;
+}
+ul#search__results {
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 0 0 15px 15px;
+    list-style: none;
+    flex: auto;
+    padding: 0;
+    overflow-x: hidden;
+    transition: 0.2s ease;
+    width: 100%;
+    position: absolute;
+    background: white;
+    margin-block-start: 0em;
+}
+#search__outline.is-hidden {
+    opacity: 0;
+    transform: translateY(-1vh);
+    display: none;
+}
+#search__results > li {
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+}
+#search__results > li > a {
+    flex:auto;
+    padding: 10px;
+}
+.is-active .search__input {
+    transform: translateY(0);
+}
+.search__result-date {
+    color: #BBB;
+    position: absolute;
+    right: 12px;
+}
+.search.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+@media (min-width: 840px) {
+    div.profile, div.nav {
+        width: 100%;
+        padding: 50px;
+    }
+}
+@media (max-width: 839px) and (min-width: 480px) {
+    div.profile, div.nav {
+        padding: 30px;
+        width: 40%;
+        display: inline-block;
+    }
+    .post-content ul li {
+        display: inline-block;
+    }
+    .post-content ul li span {
+        float: right;
+    }
+}
+@media (max-width: 479px) {
+    div.profile, div.nav {
+        padding: 10px;
+        width: 40%;
+        display: inline-block;
+    }
+    .post-content ul li {
+        display: inline-block;
+    }
+    .post-content ul li span {
+        float: right;
+    }
+}
+
+#selectLanguage {
+    display: none;
+}

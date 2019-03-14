@@ -1,0 +1,18 @@
+<button id="selectLanguage" class="mdl-button mdl-js-button mdl-button--icon">
+    <i class="material-icons">translate</i>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect mdl-list" for="selectLanguage">
+    <li class="mdl-menu__item mdl-list__item">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="language_ko">
+            <input type="checkbox" id="language_ko" class="mdl-switch__input" checked />
+            <span class="mdl-switch__label">한국어</span>
+        </label>
+    </li>
+    <li class="mdl-menu__item mdl-list__item">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="language_en">
+            <input type="checkbox" id="language_en" class="mdl-switch__input" checked />
+            <span class="mdl-switch__label">English</span>
+        </label>
+    </li>
+</ul>
+<script src="{{ site.url }}/static/js/post-selector.js"></script>
