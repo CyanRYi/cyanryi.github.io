@@ -113,6 +113,9 @@ div.content pre {
 .post-content ul li>span::before {
     content: "»";
 }
+.post-content ul li>div>.fb-like {
+    margin-left: 10px;
+}
 .post-content .mdl-chip {
     margin: 0 3px 0 3px;
 }
@@ -199,9 +202,6 @@ ul#search__results {
     .post-content ul li>div {
         display: inline-block;
         float: right;
-    }
-    .post-content ul li>div>.fb-like {
-        margin-left: 15px;
     }
 }
 @media (max-width: 839px) and (min-width: 480px) {
