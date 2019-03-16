@@ -14,7 +14,7 @@ layout: default
         {% endif %}
     {% endfor %}
 {% endif %}
-{% capture refererUri %}{{ site.url }}{{ page.slug }}{% endcapture %}
+{% capture refererUri %}{{ site.url }}/{{ page.slug }}{% endcapture %}
 {% include fb_buttons.html %}
 <hr/>
 <ul>
