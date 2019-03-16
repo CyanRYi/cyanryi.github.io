@@ -4,9 +4,9 @@ function togglePosts(id, checked) {
 
     for(var j = 0; j < posts.length; j++) {
         if (checked) {
-            posts[j].style.display = 'inline-block';
+            posts[j].classList.remove('is-hidden');
         } else {
-            posts[j].style.display = 'none';
+            posts[j].classList.add('is-hidden');
         }
     }
 }

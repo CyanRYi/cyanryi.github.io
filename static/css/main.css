@@ -184,10 +184,17 @@ ul#search__results {
     opacity: 1;
     visibility: visible;
 }
+.post-content ul li>.is-hidden {
+    display: none;
+}
 @media (min-width: 840px) {
     div.profile, div.nav {
         width: 100%;
         padding: 50px;
+    }
+    .post-content ul li {
+        display: block;
+        width: 80%;
     }
 }
 @media (max-width: 839px) and (min-width: 480px) {
@@ -198,6 +205,7 @@ ul#search__results {
     }
     .post-content ul li {
         display: inline-block;
+        width: 100%;
     }
     .post-content ul li>span {
         float: right;
@@ -210,6 +218,7 @@ ul#search__results {
         display: inline-block;
     }
     .post-content ul li {
+        width: 100%;
         display: inline-block;
     }
     .post-content ul li>span {
