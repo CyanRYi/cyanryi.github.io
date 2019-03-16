@@ -110,7 +110,7 @@ div.content pre {
 .content img {
   max-width: 100%
 }
-.post-content ul li span::before {
+.post-content ul li>span::before {
     content: "»";
 }
 .post-content .mdl-chip {
