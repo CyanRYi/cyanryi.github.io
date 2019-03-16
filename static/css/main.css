@@ -196,6 +196,9 @@ ul#search__results {
         display: block;
         width: 80%;
     }
+    .post-content ul li>div {
+        display: inline-block;
+    }
 }
 @media (max-width: 839px) and (min-width: 480px) {
     div.profile, div.nav {
@@ -207,7 +210,8 @@ ul#search__results {
         display: inline-block;
         width: 100%;
     }
-    .post-content ul li>span {
+    .post-content ul li>div {
+        display: block;
         float: right;
     }
 }
@@ -221,7 +225,8 @@ ul#search__results {
         width: 100%;
         display: inline-block;
     }
-    .post-content ul li>span {
+    .post-content ul li>div {
+        display: block;
         float: right;
     }
 }
