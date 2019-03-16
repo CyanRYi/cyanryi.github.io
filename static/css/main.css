@@ -198,6 +198,10 @@ ul#search__results {
     }
     .post-content ul li>div {
         display: inline-block;
+        float: right;
+    }
+    .post-content ul li>div>.fb-like {
+        margin-left: 15px;
     }
 }
 @media (max-width: 839px) and (min-width: 480px) {
