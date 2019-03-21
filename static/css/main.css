@@ -110,12 +110,14 @@ div.content pre {
 .content img {
   max-width: 100%
 }
+.post-content ul li>div {
+    min-width: 190px;
+}
 .post-content ul li>div>span::before {
     content: "»";
 }
 .post-content ul li>div>.fb-like {
     margin-left: 10px;
-    min-width: 65px;
 }
 .post-content .mdl-chip {
     margin: 0 3px 0 3px;
