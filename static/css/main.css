@@ -115,6 +115,7 @@ div.content pre {
 }
 .post-content ul li>div>.fb-like {
     margin-left: 10px;
+    min-width: 65px;
 }
 .post-content .mdl-chip {
     margin: 0 3px 0 3px;
