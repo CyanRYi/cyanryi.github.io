@@ -1,7 +1,7 @@
 ---
 title: HandlerMethodArgumentResolver
 category: spring
-tags: [spring]
+tags: [spring, usage]
 ---
 
 [HandlerMethodArgumentResolver](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/method/support/HandlerMethodArgumentResolver.html)라는 녀석이 있다.

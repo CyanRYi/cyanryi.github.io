@@ -1,7 +1,7 @@
 ---
 title: Request Logging Filter on spring framework
 category: spring
-tags: [spring]
+tags: [spring, usage]
 ---
 
  - 이 글은 같은 주제로 popit에도 기고되어 있습니다.

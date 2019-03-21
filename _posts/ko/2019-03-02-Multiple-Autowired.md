@@ -1,7 +1,7 @@
 ---
 title: Multiple Dependency Injection on spring framework
 category: spring
-tags: [spring]
+tags: [spring, usage]
 ---
 
  Spring에서의 DI는 Collection, List, Set. Array 등으로 N개의 Bean을 받을 수 있다.
