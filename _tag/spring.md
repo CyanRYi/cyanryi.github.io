@@ -1,5 +1,5 @@
 ---
 type: tags
 name: spring
-title: Spring-basic
+title: Spring Framework
 ---
