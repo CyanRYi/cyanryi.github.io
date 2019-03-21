@@ -5,7 +5,7 @@
         <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
         <div>
             <span>{{ post.date | date_to_string }}</span>
-            {% capture refererUri %}{{ site.url }}/{{ post.slug }}{% endcapture %}
+            {% capture refererUri %}{{ site.url }}/{{ post.slug }}/{% endcapture %}
             {% include fb_buttons.html %}
         </div>
     </li>
