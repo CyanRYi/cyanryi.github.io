@@ -1,6 +1,7 @@
 body {
   font-family: "Roboto Condensed", Arial, sans-serif;
-  background: url("/static/img/subtle_dots.png");
+  /*background: url("/static/img/subtle_dots.png");*/
+    background-color: #e0d4d4cc;
   line-height: 1.5em;
   font-weight: 300;
   font-size: 16px;
@@ -93,6 +94,12 @@ ul.sidebar-nav {
 .sidebar-nav li::before {
   content: "»";
   margin-right: .5em;
+}
+div.profile {
+    width: max-content;
+    height: max-content;
+    background: white;
+    border: #aaaaaa double 1.5px;
 }
 
 /* Content */
@@ -195,7 +202,6 @@ ul#search__results {
 }
 @media (min-width: 840px) {
     div.profile, div.nav {
-        width: 100%;
         padding: 50px;
     }
     .post-content ul li {
