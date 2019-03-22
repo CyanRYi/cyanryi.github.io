@@ -1,8 +1,7 @@
 ---
-title: Spring framework를 대하는 자세(1) - Spring의 POJO
+title: Introduce Spring(1) - POJO
 category: spring
 tags: [spring, basic]
-hidden: true
 ---
 
 토비의 스프링에서는 '개발자들이 스프링을 통해 얻게 되는 두 가지 중요한 가치'[^1] 라고 표현하는 두가지가 있다. 단순함에서 POJO를, 유연성에서 "항상 프레임워크 기반의 접근 방법을 사용해라"를 소개한다.
@@ -51,16 +50,16 @@ Spring에 있어 POJO는 가장 중요한 요소 중 하나이다. 위와 같은
 
 한때 모 사이트에서 ORM에 대한 논쟁이 벌어진 복잡한 쓰레드를 친구를 통해 소개받은 적이 있다.
 
-거기서 지나가는 행인을 빙자하며 등장하신 '한 **교수**'[^8]님이 '100명의 개발자가 투입되는 현장에서 99명은 @Controller, @Service, @Repository.. 같은 불과 몇개의 애노테이션만 사용하고, 결국 단 한명 - 의 Framework 개발자 - 만 Spring의 설정을 유연하게 사용하면 되더라' 라는 매우 공감가는 표현을 하셨다.
+거기서 지나가는 행인을 빙자하며 등장하신 '한 **교수**'[^8]님이 '100명의 개발자가 투입되는 현장에서 99명은 @Controller, @Service, @Repository.. 같은 불과 몇개의 애노테이션만 사용하고, 결국 단 한명 - 의 Framework 개발자 - 만 Spring의 설정을 유연하게 사용하면 되더라' 라는 매우 공감가는 표현을 하셨다.[^9]
 
-이것을 가능하게 하는 것은 Spring에서 POJO를 지원하기 때문이다. 99명은 POJO를 통해 개발할 수 있고, 1명은 그러한 기술적 지원을 위해 프레임워크를 확장한다.[^9] 
+이것을 가능하게 하는 것은 Spring에서 POJO를 지원하기 때문이다. 99명은 POJO를 통해 개발할 수 있고, 1명은 그러한 기술적 지원을 위해 프레임워크를 확장한다. 
 
 마지막으로, 이 글을 읽고 전자정부프레임워크에서 Service Layer에서 특정 클래스를 상속하도록 강제하는 것을 보고 비웃음을 지어줄 수 있다면, POJO에 대해 최소한의 이해는 끝났다고 생각해도 좋다. 
 
 ---
 [^1]: 개인적으로는 이 두가지를 'Spring framework의 핵심 철학' 이라고 표현하는데, 이 두가지가 Spring의 창조 이념에 가깝다고 생각될 정도로 소스코드 모든 곳에서 엿보이기 때문이다. 이는 [Spring reference 문서](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/overview.html#overview-philosophy)에 있는 Design Philosophy와는 다르다.
 
-[^2]: https://www.javatpoint.com/history-of-java [oracle 사이트](http://oracle.com.edgesuite.net/timeline/java/)에서는 이곳에서 확인할 수 있다. 앞의 링크가 보기 더 편하다.
+[^2]: [javatpoint](https://www.javatpoint.com/history-of-java), [oracle](http://oracle.com.edgesuite.net/timeline/java/)에서 확인할 수 있다. 앞의 링크가 보기 더 편하다.
 
 [^3]: 아마도 글쓴이가 마지막에 말하는 a-POJO란 Anti-POJO가 아닐까 싶을 정도로 극단적으로 표현하지만, 비슷한 고민을 했었다. 재미있게도, 댓글조차 찬반이 섞여 있다.  
 
@@ -73,6 +72,6 @@ Spring에 있어 POJO는 가장 중요한 요소 중 하나이다. 위와 같은
 
 [^7]: 이후 따로 한번 다룰 생각이다.
 
-[^8]: 지나가는 행인이라는 표현을 보고 '풉' 하고 뿜어버렸다. 속지 말자. 직접 Spring 관련 책도 저술하신 한 교수님이시다.
+[^8]: 지나가는 행인이라는 표현을 보고 '풉' 하고 뿜어버렸다. 속지 말자. 흔치 않은 닉네임이다. 직접 Spring 관련 책도 저술하셨다.
 
-[^9]: 공감이 갔던 이유는 나도 한 SI 프로젝트에 투입되며 Java와 Spring을 전혀 모르는 사내 C# 개발자들을 대상으로 Spring 내부 교육을 진행한 적이 있었다. 그리고 나도 주로 사용되는 애노테이션에 대한 용법, C#과 Java의 문법적 차이, 개발환경 구성에 대한 교육으로 교육내용을 가득 채웠다. 그걸로 충분했다.
+[^9]: 공감이 갔던 이유는 나도 한 SI 프로젝트에 투입되며 Java와 Spring을 전혀 모르는 사내 C# 개발자들을 대상으로 Spring 긴급 내부 교육을 진행한 적이 있었다. 그리고 나도 주로 사용되는 애노테이션에 대한 용법, C#과 Java의 문법적 차이, 개발환경 구성에 대한 교육으로 교육내용을 가득 채웠다. 그걸로 충분했다.
