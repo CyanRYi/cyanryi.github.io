@@ -180,6 +180,7 @@ ul#search__results {
 #search__results > li {
     display: flex;
     border-top: 1px solid #f0f0f0;
+    background: #e0d4d4cc;
 }
 #search__results > li > a {
     flex:auto;
