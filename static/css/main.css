@@ -232,7 +232,7 @@ ul#search__results {
 @media (max-width: 479px) {
     div.profile, div.nav {
         padding: 10px;
-        width: 40%;
+        width: 30%;
         display: inline-block;
     }
     .post-content ul li {
