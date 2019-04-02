@@ -2,12 +2,11 @@
 title: AbstractRoutingDataSource
 category: spring
 tags: [spring, usage]
-hidden: true
 ---
 > 상황에 따라 동일한 스키마를 갖는 3개의 Database 중 하나에서 데이터를 불러와야 한다[^1].
 
-이런 상황에 맞닥뜨린 경험이 있다. 서비스 내부에 분산된 3개의 DB를 운영상에 발생하는 문제를 모니터링해야하는 부분이었는데 실제 Production에서는 3개의 DB를 EntityManager 레벨에서 인스턴스화 시켜서 static한 map에 담아 쓰고 있었고 여기까지 가다 보니 메모리에 부담이 꽤 크게 오는 상태였다.
-우연하게 이 모듈 - 정식 모듈은 아니고, 개발팀이 반쯤 토이프로젝트처럼 관리하는 모듈이었다. - 의 접근 권한을 얻게 되었는데, 가능하면 Production은 둘째 치더라도 여기서라도 좀 부담을 줄이고 싶었다. 
+이런 상황에 맞닥뜨린 경험이 있다. 서비스 내부에 분산된 3개의 DB를 지켜보며 운영상에 발생하는 문제를 모니터링해야하는 부분이었는데 실제 Production에서는 3개의 DB를 EntityManager 레벨에서 인스턴스화 시켜서 static한 map에 담아 쓰고 있었고 여기까지 가다 보니 메모리에 부담이 꽤 크게 오는 상태였다.
+우연하게 이 모듈 - 정식 모듈은 아니고, 개발팀이 반쯤 토이프로젝트처럼 관리하는 모듈이었다. - 의 접근 권한을 얻게 되었는데, 가능하면 여기서라도 좀 부담을 줄이고 싶었다. 
 
 머릿속에 떠올랐던 것은 복수의 Datasource에 대한 factory를 구현하는 것이었다. 직접 구현하려다 보니 EntityManager나 TransactionManager까지 걱정이 되던 와중에 게으름의 신이 내게 영감을 주셨다.
 
@@ -26,7 +25,7 @@ AbstractRoutingDataSource는 IsolationLevelDataSourceRouter라는 기본적인 1
 위 2개의 field(Lookup을 사용한다면 dataSourceLookup과 lenientFallback까지)를 사용하여 Bean 초기화 이후에는 resolvedDataSources, resolvedDefaultDataSource를 갖게 되며, 런타임에서는 이 필드를 기준으로 DataSource를 라우팅하게 된다.
 resolvedDataSources에서 사용할 DataSource를 가져오는 기준은 추상메소드 determineCurrentLookupKey의 구현에 달려 있다.  
 
-### 예제 생성
+#### 예제 생성
 
 ① 당시의 상황과 비슷하게 3개의(A, O, T라는 이름을 사용했다.) Datasource를 만들고 각 DB에 Human 테이블 하나씩을 생성했다.
 ``` sql
@@ -193,7 +192,7 @@ public class DataSourceControllerInterceptor extends HandlerInterceptorAdapter {
 ```
 이외의 Controller, Service, Repository와 Entity는 일반적인 Spring MVC와 동일하다. RestController에는 기본 path("/")에 대한 get, post를 추가하였다.
 
-### 테스트
+#### 테스트
 
 ```
 GET  HTTP/1.1
@@ -251,7 +250,7 @@ Postman-Token: d3908131-aaf0-441b-853c-fc32b2d3f136
 
 [{"id":1,"name":"ANYC","age":30,"description":"O DB"},{"id":2,"name":"A","age":30,"description":"O DB"},{"id":3,"name":"ACYAN","age":11,"description":"O DB"},{"id":4,"name":"Cyan Raphael Yi","age":120,"description":"O Database"}]
 ``` 
-### 마치며
+#### 마치며
 
 여기서는 간단한 예제로 소개하지만, ②번 과정을 어떻게 응용하느냐에 따라서 Master-Slave 구조의 Database를 Routing해서 R/W를 나눈다거나, Entity별로 Database를 나눈다거나 하는 다양한 방식의 응용예제가 존재한다.
 이 글에 작성된 예제 소스코드는 [Github](https://github.com/CyanRYi/sollabs-routing-data-source)에 등록되어 있다.
