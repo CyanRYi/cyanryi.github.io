@@ -61,7 +61,7 @@ Server라는 이름만으로는 도메인의 명확한 의미를 파악하기 �
 
 말하고 싶은 것은 이것이 개발자만의 문제가 아니며, 어제오늘의 일도 아니라는 것이다.
 
-![20세기 최고의 철학자는?](/_posts/images/190308/Wittgenstein.PNG)
+![20세기 최고의 철학자는?](/images/190308/Wittgenstein.PNG)
 
 이 사람이 루드비히 비트겐슈타인(Ludwig Josef Johann Wittgenstein), 
 
@@ -176,7 +176,7 @@ public class 배 {
 [^1]: 해당 책은 각기 다른 제목으로 두번 번역되어 출판되어 원제를 표기한다. 여기서는 참조한 서적은 2017년 재판.
 
 [^2]: 
-    ![SI의 (예전)실태](/_posts/images/190308/damned_dictionary.PNG)  
+    ![SI의 (예전)실태](/images/190308/damned_dictionary.PNG)  
     실제 내가 SI에 있을때 돌던 용어사전이다. SFTRSC를 보고 Software Resource를 떠올릴 수 있는 사람이 얼마나 될까.  
     이런데서 개발을 했다 보니, 이런 당연한 주제를 놓고 입에 불을 뿜게 되는 것에 양해를 부탁드린다.
 
