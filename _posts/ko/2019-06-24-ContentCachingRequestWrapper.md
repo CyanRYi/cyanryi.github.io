@@ -2,7 +2,6 @@
 title: ContentCachingRequestWrapper
 category: spring
 tags: [spring, usage]
-hidden: true
 ---
 
 ![조환님의 피드백](/images/190624/feedback.PNG)
@@ -53,15 +52,13 @@ HttpServletResponseWrapper의 구현체이며, Spring 내부에서 사용되는 
 
 #### 마치며
 
-Spring이 제공하는 바퀴를 만들지 않아도 되는 기능 중 하나이며, Servlet를 사용한다면 알아두면 언젠가 한번쯤은 꺼내서 써먹을 기회가 오는 기능이라고 생각한다.
+Spring이 제공하는 바퀴를 만들지 않아도 되는 기능 중 하나이며 Servlet를 사용한다면 언젠가 한번쯤은 사용할 기회가 오는 기능이다.
 
 다만 이 기능을 사용하더라도 ServletRequest, ServletResponse가 어떻게 구현되어 있는지는 대략적으로라도 알아두는 것이 도움이 된다. 
-
-다만.. 우리는 언제나 게으르기 때문에..
 
 AS성의 글이기 때문에 별도의 예제코드는 없으며, [gjall Project의 소스코드](https://github.com/CyanRYi/gjall/blob/master/src/main/java/tech/sollabs/gjall/GjallRequestLoggingFilter.java)로 대체한다.
 
 ※ 변변찮은 글에 피드백을 주신 조환님께 감사드립니다.
 
 ---
-[^1]: Response의 경우 당연히 getNativeResponse(Class). 재귀호출을 통해 Decorator 내부를 탐색하며 type과 일치하는 녀석을 찾아준다. 없으면 null을 뱉음에 주의.
+[^1]: Response의 경우 당연히 getNativeResponse(Class). 재귀호출을 통해 Decorator 내부를 탐색하며 type과 일치하는 녀석을 찾아준다. 없으면 null을 리턴한다.
