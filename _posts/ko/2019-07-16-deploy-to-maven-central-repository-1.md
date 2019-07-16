@@ -2,7 +2,6 @@
 title: 메이븐 중앙 저장소에 배포하기-1
 category: oss
 tags: [oss]
-hidden: true
 ---
 
 작년 2월부터 메이븐 중앙 저장소에 프로젝트를 배포해봤는데 생각보다는 복잡하지 않았는데, 어디까지나 '생각보다는' 이지 혼자 github에 올리는 것보다는 신경쓸 부분이 많은 것이 사실이다. 
@@ -62,15 +61,14 @@ hidden: true
     - [LGPL](https://opensource.org/licenses/lgpl-3.0.html)의 경우는 조금 다른데, 직접 수정하지 않고 단순 사용하는 경우에 대해서는 소스코드 공개의 의무가 발생하지 않는다. [MariaDB의 Java Client](https://search.maven.org/artifact/org.mariadb.jdbc/mariadb-java-client/2.4.2/jar)같은 경우 이 라이센스를 사용한다.
     
 2. 이보다 조금 더 자유로운 라이센스 - BSD 계열
-    - 세부적인 부분은 조금씩 다르지만[^3], 소스코드 제공 의무가 없고 상업적 이용도 가능하고 2차 저작물의 라이센스도 자유롭게 붙일 수 있는 경우이다.
-    - [Apache License 2.0](https://opensource.org/licenses/Apache-2.0), [MIT](https://opensource.org/licenses/MIT), [BSD 2-clause](https://opensource.org/licenses/BSD-2-Clause)[^4]를 자주 볼 수 있다. 
+    - 세부적인 부분은 조금씩 다르지만[^2], 소스코드 제공 의무가 없고 상업적 이용도 가능하고 2차 저작물의 라이센스도 자유롭게 붙일 수 있는 경우이다.
+    - [Apache License 2.0](https://opensource.org/licenses/Apache-2.0), [MIT](https://opensource.org/licenses/MIT), [BSD 2-clause](https://opensource.org/licenses/BSD-2-Clause)[^3]를 자주 볼 수 있다. 
 
 선택은 자유이지만 나는 현재 MIT를 쓰고 있고, BSD-2-clause으로의 변경을 고려하고 있다.
 차이는 그냥 저작자 명과 라이센스 첨부 의무가 생기는 정도인데 어차피 자기만족으로 OSS 하는거니 그정도 욕심은 부려도 되지 않나 싶기도..
 
 이 부분을 추가하면 이렇다.
 ```xml
-    ...
     <licenses>
         <license>
             <name>MIT</name>
@@ -78,7 +76,6 @@ hidden: true
             <distribution>repo</distribution>
         </license>
     </licenses>
-    ...
 ```
 물론 이 라이센스는 저장소 내의 License.md 에도 추가되어야 한다.(깃헙이 자동으로 만들어주니까.)
 
@@ -180,6 +177,7 @@ hidden: true
     - Linux 사용자는 os마다 다를 수 있지만 내장된 gpg를 사용해서 생성하고, http://pgp.mit.edu/에 직접 업로드할 수 있다. 
     - Mac의 경우 : [이동욱님의 블로그](https://jojoldu.tistory.com/161)
     - Windows의 경우 : [전광섭님의 블로그](https://www.lesstif.com/pages/viewpage.action?pageId=30277671#id-%EB%A9%94%EC%9D%B4%EB%B8%90%EC%A4%91%EC%95%99%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90%EC%95%84%ED%8B%B0%ED%8C%A9%ED%8A%B8%EC%97%85%EB%A1%9C%EB%94%A9-maven-uploadingartifacttocentralrepository-GPG%ED%82%A4%EC%83%9D%EC%84%B1)
+    - 여기서 생성한 pass phrase를 꼭 기록해 두어야 한다. 배포 과정에서 필요로 한다.
     
 ```xml
 <build>
