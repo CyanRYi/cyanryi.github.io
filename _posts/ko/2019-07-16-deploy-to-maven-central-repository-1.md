@@ -18,8 +18,7 @@ hidden: true
 #### `<groupId>`, `<artifactId>`
 
 이 둘은 낯설지 않은 개념인데, 실제 의존성을 추가할때 많이 보게 되는 항목이다.   
-이것도 나름 [Maven의 공식 가이드](https://maven.apache.org/guides/mini/guide-naming-conventions.html)가 존재한다.   
-우리가 만든 프로젝트도 어딘가에서 참조되도록 하기 위해서 이 값을 설정해야 하는데, 
+[Maven의 공식 가이드](https://maven.apache.org/guides/mini/guide-naming-conventions.html)에 맞춰 우리가 만든 프로젝트도 어딘가에서 참조되도록 하기 위해서 이 값을 설정해야 하는데, 
 
 `<artifactId>`는 그냥 (group id 내에서)고유한 이름이다.   
 이희승 개발자님의 'netty'라거나 아파치의 'commons-lang3'에 해당하는 부분이다.   
@@ -27,7 +26,7 @@ hidden: true
 알아보기 쉬우면서 부르기도 쉬운 브랜드명을 짓는 것과 같은 부분이라 제일 어려운 부분이기도 하다.
 
 `<groupId>`는 보유하고 있는 도메인이 있다면 그 역순(우리가 예제에서 주로 보는 com.example 형태)으로 설정한다.
-만약 소유하고 있는 도메인이 없다면 github 저장소의 주소를 통해 com.github.<github계정명>과 같이 설정한다.
+만약 소유하고 있는 도메인이 없다면 github 저장소의 주소를 통해 com.github.`<github계정명>`과 같이 설정한다.
 
 #### `<version>`
 
@@ -58,13 +57,13 @@ hidden: true
 깊이 들어가면 한도 끝도 없지만 크게 두 부류로 구분할 수 있다.
 
 1. [자유소프트웨어 재단](https://www.fsf.org/)의 라이센스 - GPL 계열
-    - GPLv2, GPLv3가 주로 사용되며, 이 라이센스 내에는 **원본저작물 및 그에 기반한 저작물(Work based on the program)에 대한 소스코드를 제공하거나, 요청 시 제공하겠다는 약정서를 제공할 것** 이라는 강력한 copyleft 항목이 포함되어 있다.
+    - [GPLv2](https://opensource.org/licenses/gpl-2.0.php), [GPLv3](https://opensource.org/licenses/GPL-3.0)가 주로 사용되며, 이 라이센스 내에는 **원본저작물 및 그에 기반한 저작물(Work based on the program)에 대한 소스코드를 제공하거나, 요청 시 제공하겠다는 약정서를 제공할 것** 이라는 강력한 copyleft 항목이 포함되어 있다.
     - 즉, 이 오픈소스 프로젝트를 수정하거나 단순 사용하면 그와 관련된 부분의 소스코드를 공개해야 한다는 것을 의미한다.[^1]
-    - LGPL의 경우는 조금 다른데, 직접 수정하지 않고 단순 사용하는 경우에 대해서는 소스코드 공개의 의무가 발생하지 않는다. [MariaDB의 Java Client](https://search.maven.org/artifact/org.mariadb.jdbc/mariadb-java-client/2.4.2/jar)같은 경우 이 라이센스를 사용한다.
+    - [LGPL](https://opensource.org/licenses/lgpl-3.0.html)의 경우는 조금 다른데, 직접 수정하지 않고 단순 사용하는 경우에 대해서는 소스코드 공개의 의무가 발생하지 않는다. [MariaDB의 Java Client](https://search.maven.org/artifact/org.mariadb.jdbc/mariadb-java-client/2.4.2/jar)같은 경우 이 라이센스를 사용한다.
     
 2. 이보다 조금 더 자유로운 라이센스 - BSD 계열
     - 세부적인 부분은 조금씩 다르지만[^3], 소스코드 제공 의무가 없고 상업적 이용도 가능하고 2차 저작물의 라이센스도 자유롭게 붙일 수 있는 경우이다.
-    - APL2.0, MIT, BSD 2-clause[^4]를 자주 볼 수 있다. 
+    - [Apache License 2.0](https://opensource.org/licenses/Apache-2.0), [MIT](https://opensource.org/licenses/MIT), [BSD 2-clause](https://opensource.org/licenses/BSD-2-Clause)[^4]를 자주 볼 수 있다. 
 
 선택은 자유이지만 나는 현재 MIT를 쓰고 있고, BSD-2-clause으로의 변경을 고려하고 있다.
 차이는 그냥 저작자 명과 라이센스 첨부 의무가 생기는 정도인데 어차피 자기만족으로 OSS 하는거니 그정도 욕심은 부려도 되지 않나 싶기도..
@@ -181,7 +180,6 @@ hidden: true
     - Linux 사용자는 os마다 다를 수 있지만 내장된 gpg를 사용해서 생성하고, http://pgp.mit.edu/에 직접 업로드할 수 있다. 
     - Mac의 경우 : [이동욱님의 블로그](https://jojoldu.tistory.com/161)
     - Windows의 경우 : [전광섭님의 블로그](https://www.lesstif.com/pages/viewpage.action?pageId=30277671#id-%EB%A9%94%EC%9D%B4%EB%B8%90%EC%A4%91%EC%95%99%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90%EC%95%84%ED%8B%B0%ED%8C%A9%ED%8A%B8%EC%97%85%EB%A1%9C%EB%94%A9-maven-uploadingartifacttocentralrepository-GPG%ED%82%A4%EC%83%9D%EC%84%B1)
-    - **절대, passphrase를 분실하면 안된다.**
     
 ```xml
 <build>
@@ -237,9 +235,8 @@ hidden: true
  
  
 ---
-[^1]: 만들때도, 사용할때도 주의를 크게 기울일 필요가 있는데, 회사에서 잘못 썼다가 크게 데이는 경우가 심심찮게 보인다.[이 뉴스](http://www.inews24.com/view/1023517)도 불과 2년전 얘기다.       
-GPL을 쓰다가 다른 라이센스로 변경할 수도 있지만, 누군가가 기여한 부분이 있다면 그 부분 관련해서 또 복잡해진다.
+[^1]: 만들때도, 사용할때도 주의를 크게 기울일 필요가 있는데, 회사에서 잘못 썼다가 크게 데이는 경우가 심심찮게 보인다.[이 뉴스](http://www.inews24.com/view/1023517)도 불과 2년전 얘기다. GPL을 쓰다가 다른 라이센스로 변경할 수도 있지만, 누군가가 기여한 부분이 있다면 그 부분 관련해서 또 복잡해진다.
 
 [^2]: 쓰는건 상관없지만, 해당 라이센스를 '첨부' 해야 한다던가 하는 가벼운 제약 정도가 붙기도 한다.
 
-[^3]: 여러 종류가 있고 심지어 별명들도 많아서 복잡하지만, BSD 2-clause, 3-clause 형태로 구분되는데, 이름대로 조항 갯수가 2개냐 3개냐의 차이. 
+[^3]: 여러 종류가 있고 심지어 별명들도 많아서 복잡하지만, BSD 2-clause, [3-clause](https://opensource.org/licenses/BSD-3-Clause) 형태로 구분되는데, 이름대로 조항 갯수가 2개냐 3개냐의 차이. 
