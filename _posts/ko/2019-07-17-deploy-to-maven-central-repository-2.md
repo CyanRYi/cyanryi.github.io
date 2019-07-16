@@ -109,14 +109,14 @@ Snapshot은 여러번 재배포가 가능하지만 Release는 재배포를 위�
 maven으로 deploy phase를 실행하면 된다. 끝. 여기서부터는 간단한데, javadoc이나 기타 과정에서 오류가 발생할 수 있으나 에러 메시지를 보면 간단하게 해결할 수 있다.
 deploy 진행 과정에서 Gpg key를 입력하는 팝업이 뜰텐데, gpg.passphrase를 입력하면 된다.
 
-배포가 성공적으로 완료되었다면, (https://oss.sonatype.org/content/repositories/snapshots/tech/sollabs/) 링크를 통해 확인할 수 있다.
+배포가 성공적으로 완료되었다면, https://oss.sonatype.org/content/repositories/snapshots/tech/sollabs/ 링크를 통해 확인할 수 있다.
 링크의 뒷부분은 본인의 groupId로 수정해야 한다.
 
 #### Release 배포하기
 Snapshot 배포시와 동일하다. version에서 -SNAPSHOT을 제거하고 deploy phase를 진행하면 된다.
 Snapshot과는 달리 별도의 플러그인을 사용하고 있기 때문에 Gpg Key를 입력하는 팝업도 뜨지 않는다.
 다만 시간은 조금 더 오래 걸리는데, 본래 Staging Repository로 배포되고, Close 과정을 거쳐서 배포되기 때문이다.
-이 과정이 종료되었다면, (https://repo1.maven.org/maven2/tech/sollabs/) 링크를 통해 배포를 확인할 수 있다.
+이 과정이 종료되었다면, https://repo1.maven.org/maven2/tech/sollabs/ 링크를 통해 배포를 확인할 수 있다.
 
 마찬가지로 https://search.maven.org/를 통해서 해당 프로젝트를 검색할 수 있는데 상황에 따라 몇분 정도의 시간은 더 필요하기도 하다.
 (https://mvnrepository.com/ 의 경우에는 넉넉잡아 다음날 확인하는 것이 더 편하다.)
@@ -124,6 +124,9 @@ Snapshot과는 달리 별도의 플러그인을 사용하고 있기 때문에 Gp
  
 ---
 여기까지가 전체적인 배포 과정이다. 모두 성공했다면 이제는 내가, 혹은 다른 누군가가 해당 프로젝트를 라이센스에 따라 자유롭게 접근 가능하다.
- 
+
+OSSRH의 [nexus](https://oss.sonatype.org)에 접속해서 가입한 계정으로 로그인하면 좌측 메뉴에 [Central Statistics](https://oss.sonatype.org/#central-stat)가 존재하고, 클릭해보면 최근 1년간에 한해 프로젝트와 버전별 총 다운로드 수/고유 IP 기준의 다운로드 수 통계를 볼 수 있다.
+하단의 상세 항목은 월별 통계는 확인이 가능하지만, Last ~~ Months, Year는 정상 작동하지 않는 듯 하다.     
+![통계](/images/190717/statistics.PNG)
 ---
 [^1]: [bintray](https://bintray.com) 같은 곳도 쓰는 듯 하다. [이동욱님의 블로그](https://jojoldu.tistory.com/161)에서는 그쪽을 다룬다.
