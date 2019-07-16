@@ -2,7 +2,6 @@
 title: 메이븐 중앙 저장소에 배포하기-2
 category: oss
 tags: [oss]
-hidden: true
 ---
 
 [이전 글](/deploy-to-maven-central-repository-1)을 통해 프로젝트의 준비가 완료되었다면, 정식으로 배포하기 위한 과정을 진행해야 한다.
@@ -128,5 +127,6 @@ Snapshot과는 달리 별도의 플러그인을 사용하고 있기 때문에 Gp
 OSSRH의 [nexus](https://oss.sonatype.org)에 접속해서 가입한 계정으로 로그인하면 좌측 메뉴에 [Central Statistics](https://oss.sonatype.org/#central-stat)가 존재하고, 클릭해보면 최근 1년간에 한해 프로젝트와 버전별 총 다운로드 수/고유 IP 기준의 다운로드 수 통계를 볼 수 있다.
 하단의 상세 항목은 월별 통계는 확인이 가능하지만, Last ~~ Months, Year는 정상 작동하지 않는 듯 하다.     
 ![통계](/images/190717/statistics.PNG)
+
 ---
 [^1]: [bintray](https://bintray.com) 같은 곳도 쓰는 듯 하다. [이동욱님의 블로그](https://jojoldu.tistory.com/161)에서는 그쪽을 다룬다.
