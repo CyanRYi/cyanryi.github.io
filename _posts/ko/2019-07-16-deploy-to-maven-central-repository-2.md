@@ -9,20 +9,18 @@ hidden: true
 
 배포하기 위한 저장소는 몇군데 선택지가 있는데, 여기서는 내가 이용하고 있는 [OSSRH](https://oss.sonatype.org/)를 기준으로 설명한다.[^1]
 
-### 준비하기
-
-#### 계정 만들기
+#### 계정 생성 & 저장소 신청하기
 
 배포를 위해서는 [OSSRH](https://oss.sonatype.org/)에 계정을 등록해야 한다.
 [이 링크](https://issues.sonatype.org/secure/Signup!default.jspa)를 통해 가입할 수 있다.
-
-#### 저장소 신청하기
 
 가입 완료 메일이 도착하면, Jira 이슈를 통해 [저장소 생성을 신청](https://issues.sonatype.org/secure/CreateIssue!default.jspa)해야 한다.
 저장소를 신청하기 위해서는 Group Id를 기입해야 하며, 도메인을 사용했을 경우에는 해당 도메인의 소유권을 확인한다.
 
 내 경우에는 github page를 통해서 프로젝트 페이지를 등록해 놓아 오래 걸리지 않아 통과할 수 있었다. [참조](https://issues.sonatype.org/browse/OSSRH-38065)
 저장소 신청은 Group Id 단위이며, 이미 한번 저장소 생성을 했으면 이후에는 추가적인 신청이 필요 없다고 한다.[참조](https://issues.sonatype.org/browse/OSSRH-50132)
+
+빠르면 하루, 주말이나 연휴가 끼는 경우라도 몇일 안에는 해결이 된다.
 
 #### settings.xml 수정하기
 사설 nexus 관련 설정을 해봤다면 알고 있겠지만, nexus에 배포하기 위해 필요한 계정 정보를 프로젝트의 pom.xml에 담을수는 없다... 라기보단 당연히 담아서는 안된다.   
@@ -33,6 +31,7 @@ hidden: true
 1. 서버는 복수를 등록할 수 있다.
     - 서버의 ID는 고유하게 식별할 수 있으면 된다. 여기서는 배포 서버인 OSSRH를 설정하고 있다.
     - `<username>`과 `<password>`는 최초에 [OSSRH](https://oss.sonatype.org/)에 가입했던 ID와 비밀번호를 기입한다.
+    
 ```xml
 <servers>
     <server>
@@ -47,6 +46,7 @@ hidden: true
     - `<id>`는 프로필의 ID로 *위에 사용한 server의 ID와는 무관*하게 사용한다. 가능한 헷갈리지 않게 다르게 설정하는 것을 추천.
     - `<properties>`에는 각 프로필마다 고유하게 사용할 항목들을 선언하고, 이를 pom.xml에서 참조할 수 있다.  
     - `<properties>`안에 `<gpg.passphrase>`라는 이름으로 이전 글에서 생성한 key를 기록해 놓으면 편리하다.
+    
 ```xml
 <profiles>
     <profile>
@@ -59,6 +59,7 @@ hidden: true
 ```
 
 1. `<activeProfiles>`를 통해 활성화할 profile을 미리 선언할 수도 있다.
+
 ```xml
 <activeProfiles>
     <activeProfile>oss-deployment</activeProfile>
@@ -72,6 +73,7 @@ hidden: true
     - `<snapshotRepository>`만을 추가한다.
     - `<id>`는 settings.xml에 추가했던 server의 id와 동일해야 한다.
     - `<url>`은 아래 정보와 동일하다.(저장소를 생성해줄때 알려준다.)
+    
 ```xml
 <distributionManagement>
     <snapshotRepository>
