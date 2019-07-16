@@ -120,13 +120,14 @@ Snapshot과는 달리 별도의 플러그인을 사용하고 있기 때문에 Gp
 마찬가지로 https://search.maven.org/를 통해서 해당 프로젝트를 검색할 수 있는데 상황에 따라 몇분 정도의 시간은 더 필요하기도 하다.
 (https://mvnrepository.com/ 의 경우에는 넉넉잡아 다음날 확인하는 것이 더 편하다.)
 
- 
 ---
 여기까지가 전체적인 배포 과정이다. 모두 성공했다면 이제는 내가, 혹은 다른 누군가가 해당 프로젝트를 라이센스에 따라 자유롭게 접근 가능하다.
 
 OSSRH의 [nexus](https://oss.sonatype.org)에 접속해서 가입한 계정으로 로그인하면 좌측 메뉴에 [Central Statistics](https://oss.sonatype.org/#central-stat)가 존재하고, 클릭해보면 최근 1년간에 한해 프로젝트와 버전별 총 다운로드 수/고유 IP 기준의 다운로드 수 통계를 볼 수 있다.
-하단의 상세 항목은 월별 통계는 확인이 가능하지만, Last ~~ Months, Year는 정상 작동하지 않는 듯 하다.     
+하단의 상세 항목은 월별 통계는 확인이 가능하지만, Last ~~ Months, Year는 정상 작동하지 않는 듯 하다.   
+  
 ![통계](/images/190717/statistics.PNG)
+
 
 ---
 [^1]: [bintray](https://bintray.com) 같은 곳도 쓰는 듯 하다. [이동욱님의 블로그](https://jojoldu.tistory.com/161)에서는 그쪽을 다룬다.
