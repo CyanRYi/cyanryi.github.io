@@ -23,8 +23,12 @@ h1, h2, h3 {
   color: #696969;
   font-weight: normal;
 }
-h1, h2, h3::before {
+h2::before {
     content: "§";
+    margin: 3px;
+}
+h3::before {
+    content: "＊";
     margin: 3px;
 }
 h1 {
