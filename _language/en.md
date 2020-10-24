@@ -1,4 +1,0 @@
----
-type: language
-name : en
----

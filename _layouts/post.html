@@ -15,11 +15,7 @@ layout: default
     {% endfor %}
 {% endif %}
 {% capture refererUri %}{{ site.url }}/{{ page.slug }}{% endcapture %}
-{% include fb_buttons.html %}
 <hr/>
-<ul>
-    <li>한국어 원문은 <a href="{{ site.url }}{{ post.url }}"><strong>여기</strong></a>.</li>
-</ul>
 <div class="content">
     <div class="post">{{ content }}</div>
 </div>
@@ -42,6 +38,3 @@ layout: default
 </div>
 {% endif %}
 <hr/>
-{% if site.facebook_app %}
-    <div class="fb-comments" data-href="{{ refererUri }}" data-width="700" data-numposts="10"></div>
-{% endif %}
