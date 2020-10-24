@@ -74,8 +74,6 @@ urls:
 permalink: /:title
 
 collections:
-  language:
-    output: true
   tag:
     output: true
     permalink: /tag/:name/
