@@ -16,7 +16,7 @@ hr {
 }
 
 span.time, span.categories, span.tags {
-    color: #4A4A4A;
+    color: #4caf50;
     margin-bottom: 5px;
     font-size: 15px;
 }
@@ -57,12 +57,12 @@ a, a:link, a:active {
 }
 
 a:hover {
-    color: #1e0010;
+    color: #eeeeee;
     text-decoration: underline;
 }
 
 a.footnote {
-    color: #080808;
+    color: #666666;
     font-style: italic;
     text-decoration: underline;
 }
@@ -147,6 +147,10 @@ div.content pre {
     font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
     font-size: 14px;
     border: none;
+}
+
+.post-title {
+    color: #4caf50;
 }
 
 .post-content img,
