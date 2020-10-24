@@ -22,7 +22,7 @@ span.time, span.categories, span.tags {
 }
 
 h1, h2, h3 {
-    color: #696969;
+    color: #4caf50;
     font-weight: normal;
 }
 
@@ -122,7 +122,7 @@ img.profile-avatar {
 .sidebar {
     background: #ffffff;
     color: #000000;
-    height: 500px;
+    height: 520px;
     top: 10px;
     position: -webkit-sticky;
     position: sticky;
@@ -153,10 +153,6 @@ div.content pre {
     border: none;
 }
 
-.post-title {
-    color: #4caf50;
-}
-
 .post-content img,
 .content img {
     max-width: 100%
@@ -176,11 +172,16 @@ div.content pre {
 
 .post-content .mdl-chip {
     margin: 0 3px 0 3px;
+    color: #A3E0E3
 }
 
 .post-content a.mdl-chip {
     background-color: #0d47a1;
     color: #e0f2f1;
+}
+
+.post-date {
+    color: #A3E0E3
 }
 
 .mdl-menu {
