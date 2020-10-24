@@ -1,5 +1,5 @@
 ---
-title: Multiple Dependency Injection on spring framework
+title: Autowired to Collection
 category: spring
 tags: [spring, usage]
 ---

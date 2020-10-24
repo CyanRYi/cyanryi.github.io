@@ -1,5 +1,5 @@
 ---
-title: Request Logging Filter on spring framework
+title: RequestLoggingFilter
 category: spring
 tags: [spring, usage]
 ---
