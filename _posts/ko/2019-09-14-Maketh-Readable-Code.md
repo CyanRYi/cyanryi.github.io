@@ -2,6 +2,7 @@
 title: 읽기 쉬운 코드를 작성하는 이유
 category: hestory
 tags: [philosophy]
+hidden: true
 ---
 
 Clean Code에 대한 두가지 시선이 존재한다.[^1]
