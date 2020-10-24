@@ -1,77 +1,92 @@
 body {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  /*background: url("/static/img/subtle_dots.png");*/
-    background-color: #e0d4d4cc;
-  line-height: 1.5em;
-  font-weight: 300;
-  font-size: 18px;
-  color: #666;
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    background-color: #ffffff;
+    line-height: 1.5em;
+    font-weight: 300;
+    font-size: 18px;
+    color: #000000;
 }
+
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #F7F1F1;
-  border-bottom: 1px solid #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #F7F1F1;
+    border-bottom: 1px solid #fff;
 }
+
 span.time, span.categories, span.tags {
-  color: #4A4A4A;
-  margin-bottom: 5px;
-  font-size: 15px;
+    color: #4A4A4A;
+    margin-bottom: 5px;
+    font-size: 15px;
 }
+
 h1, h2, h3 {
-  color: #696969;
-  font-weight: normal;
+    color: #696969;
+    font-weight: normal;
 }
+
 h2::before {
     content: "§";
     margin: 3px;
 }
+
 h3::before {
     content: "＊";
     margin: 3px;
 }
+
 h1 {
-  margin-bottom: 10px;
-  font-size: 30px;
+    margin-bottom: 10px;
+    font-size: 30px;
 }
+
 h2 {
     margin-bottom: 5px;
     font-size: 25px;
 }
+
 h3 {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
     font-size: 22px;
 }
+
 a, a:link, a:active {
-  text-decoration: none;
-  color: #2b84ef;
+    text-decoration: none;
+    color: #2b84ef;
 }
+
 a:hover {
-  color: #1e0010;
-  text-decoration: underline;
+    color: #1e0010;
+    text-decoration: underline;
 }
+
 a.footnote {
-  color: #080808;
-  font-style: italic;
-  text-decoration: underline;
+    color: #080808;
+    font-style: italic;
+    text-decoration: underline;
 }
+
 blockquote {
     padding: 10px 20px;
     margin: 0 0 20px;
     font-size: 16px;
     border-left: 5px solid #eee;
 }
+
 blockquote::before, blockquote::after {
     content: "";
     margin: 0;
 }
+
 blockquote p {
     margin: 0 0 10px;
 }
+
 blockquote p:last-child, blockquote ul:last-child, blockquote ol:last-child {
     margin-bottom: 0;
 }
+
 footer {
     border-top: 1px solid #F7F1F1;
     width: 100%;
@@ -84,9 +99,11 @@ footer {
     bottom: 0;
     padding-bottom: 10px;
 }
+
 .float-right {
-  float: right;
+    float: right;
 }
+
 /* Left column */
 img.profile-avatar {
     border-radius: 150px;
@@ -97,17 +114,21 @@ img.profile-avatar {
     margin-left: auto;
     margin-right: auto;
 }
+
 ul.sidebar-nav {
     padding-inline-start: 0px;
 }
+
 .sidebar-nav li {
-  margin: 0;
-  list-style: none;
+    margin: 0;
+    list-style: none;
 }
+
 .sidebar-nav li::before {
-  content: "»";
-  margin-right: .5em;
+    content: "»";
+    margin-right: .5em;
 }
+
 div.profile {
     width: max-content;
     height: max-content;
@@ -117,53 +138,63 @@ div.profile {
 
 /* Content */
 div.content pre {
-  background: #333333;
-  padding: 10px;
-  color: #FFF;
-  overflow-x: auto;
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 14px;
-  border: none;
+    background: #333333;
+    padding: 10px;
+    color: #FFF;
+    overflow-x: auto;
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: 14px;
+    border: none;
 }
 
 .post-content img,
 .content img {
-  max-width: 100%
+    max-width: 100%
 }
-.post-content ul li>div {
+
+.post-content ul li > div {
     min-width: 190px;
 }
-.post-content ul li>div>span::before {
+
+.post-content ul li > div > span::before {
     content: "»";
 }
-.post-content ul li>div>.fb-like {
+
+.post-content ul li > div > .fb-like {
     margin-left: 10px;
 }
+
 .post-content .mdl-chip {
     margin: 0 3px 0 3px;
 }
+
 .post-content a.mdl-chip {
     background-color: #0d47a1;
     color: #e0f2f1;
 }
+
 .mdl-menu {
     width: 160px;
 }
+
 .btn-github iframe {
     display: inline-block;
     width: 150px;
     border: none;
 }
+
 /* search css */
 #js-search {
     width: 500px;
     max-width: 90%;
 }
+
 input#search__input {
     max-width: calc(90% - 24px);
     width: 400px;
     display: inline-block;
 }
+
 div#search__outline {
     overflow: visible;
     position: relative;
@@ -172,8 +203,9 @@ div#search__outline {
     width: 400px;
     display: flex;
 }
+
 ul#search__results {
-    border: 1px solid rgba(0,0,0,.12);
+    border: 1px solid rgba(0, 0, 0, .12);
     border-radius: 0 0 15px 15px;
     list-style: none;
     flex: auto;
@@ -185,74 +217,90 @@ ul#search__results {
     background: white;
     margin-block-start: 0em;
 }
+
 #search__outline.is-hidden {
     opacity: 0;
     transform: translateY(-1vh);
     display: none;
 }
+
 #search__results > li {
     display: flex;
     border-top: 1px solid #f0f0f0;
     background: #e0d4d4cc;
 }
+
 #search__results > li > a {
-    flex:auto;
+    flex: auto;
     padding: 10px;
 }
+
 .is-active .search__input {
     transform: translateY(0);
 }
+
 .search__result-date {
     color: #BBB;
     position: absolute;
     right: 12px;
 }
+
 .search.is-active {
     opacity: 1;
     visibility: visible;
 }
-.post-content ul li>.is-hidden {
+
+.post-content ul li > .is-hidden {
     display: none;
 }
+
 @media (min-width: 840px) {
     div.profile, div.nav {
         padding: 50px;
     }
+
     .post-content ul li {
         display: block;
         width: 80%;
     }
-    .post-content ul li>div {
+
+    .post-content ul li > div {
         display: inline-block;
         float: right;
     }
 }
+
 @media (max-width: 839px) and (min-width: 480px) {
     div.profile, div.nav {
         padding: 30px;
         width: 40%;
         display: inline-block;
     }
+
     .post-content ul li {
         display: inline-block;
         width: 100%;
     }
-    .post-content ul li>div {
+
+    .post-content ul li > div {
         display: block;
         float: right;
     }
 }
+
 @media (max-width: 479px) {
     div.profile, div.nav {
         padding: 10px;
         width: 30%;
         display: inline-block;
     }
+
     .post-content ul li {
         width: 100%;
         display: inline-block;
     }
-    .post-content ul li>div {
+
+    .post-content ul li > div {
         display: block;
         float: right;
     }
