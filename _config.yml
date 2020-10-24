@@ -13,7 +13,7 @@ github: https://github.com/CyanRYi
 # You can find your shortname on the Settings page of your Disqus account
 disqus:
 
-facebook_app: 122275605125275
+facebook_app:
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: UA-135681883-1
 
@@ -98,13 +98,4 @@ defaults:
       type: category
     values:
       layout: category_list
-  - scope:
-      path: '_posts/en'
-    values:
-      language: en
-      permalink: /en/:title
-  - scope:
-      path: '_posts/ko'
-    values:
-      language: ko
 

@@ -18,15 +18,7 @@ layout: default
 {% include fb_buttons.html %}
 <hr/>
 <ul>
-    {% for post in site.posts %}
-        {% if post.slug == page.slug and post.language != page.language %}
-            {% if post.language == 'en' %}
-                <li>English version of this post is <a href="{{ site.url }}{{ post.url }}"><strong>here</strong></a>.</li>
-            {% else %}
-                <li>한국어 원문은 <a href="{{ site.url }}{{ post.url }}"><strong>여기</strong></a>.</li>
-            {% endif %}
-        {% endif %}
-    {% endfor %}
+    <li>한국어 원문은 <a href="{{ site.url }}{{ post.url }}"><strong>여기</strong></a>.</li>
 </ul>
 <div class="content">
     <div class="post">{{ content }}</div>
