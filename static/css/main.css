@@ -62,9 +62,13 @@ a:hover {
 }
 
 a.footnote {
-    color: #666666;
+    color: #bbdefb;
     font-style: italic;
     text-decoration: underline;
+}
+
+a.reversefootnote {
+    color: #bbdefb;
 }
 
 blockquote {
