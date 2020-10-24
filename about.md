@@ -11,11 +11,10 @@ permalink: /about/
 
 ### More Information
 
-I don't have my own.  
-I ask a question to everything in the world .  
-I am finding an answer from everything in the world .  
-I use them to make the world via code.  
-In itself, I become a framework to translate nature to Software.
+- 주로 Spring framework를 다루는 개발자.
+- 다른 것도 해보고 싶은데 항상 Spring만 시킴
+- 요새 개발자 몸값이 올라간다는데 나한테는 해당이 없음.
+- 스타트업 생활하다가 이력서 관리 못한 개발자. (더럽)
 
 ### Contact me
 
