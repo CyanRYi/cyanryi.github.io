@@ -1,10 +1,10 @@
 body {
     font-family: "Roboto Condensed", Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #000000;
     line-height: 1.5em;
     font-weight: 300;
     font-size: 18px;
-    color: #000000;
+    color: #DDDDDD;
 }
 
 hr {
@@ -115,6 +115,11 @@ img.profile-avatar {
     margin-right: auto;
 }
 
+.sidebar {
+    background: #ffffff;
+    color: #000000;
+}
+
 ul.sidebar-nav {
     padding-inline-start: 0px;
 }
@@ -132,7 +137,6 @@ ul.sidebar-nav {
 div.profile {
     width: max-content;
     height: max-content;
-    background: white;
     border: #aaaaaa double 1.5px;
 }
 
