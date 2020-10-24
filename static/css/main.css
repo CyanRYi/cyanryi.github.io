@@ -118,6 +118,10 @@ img.profile-avatar {
 .sidebar {
     background: #ffffff;
     color: #000000;
+    height: 500px;
+    top: 10px;
+    position: -webkit-sticky;
+    position: sticky;
 }
 
 ul.sidebar-nav {
@@ -132,12 +136,6 @@ ul.sidebar-nav {
 .sidebar-nav li::before {
     content: "»";
     margin-right: .5em;
-}
-
-div.profile {
-    width: max-content;
-    height: max-content;
-    border: #aaaaaa double 1.5px;
 }
 
 /* Content */
