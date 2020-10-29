@@ -122,10 +122,13 @@ img.profile-avatar {
 .sidebar {
     background: #ffffff;
     color: #000000;
-    height: 520px;
     top: 10px;
     position: -webkit-sticky;
     position: sticky;
+}
+
+.sidebar > span {
+    font-size: small;
 }
 
 ul.sidebar-nav {
@@ -266,8 +269,12 @@ ul#search__results {
 }
 
 @media (min-width: 840px) {
+    .sidebar {
+        height: 520px;
+    }
+
     div.profile, div.nav {
-        padding: 50px;
+        padding: 30px;
     }
 
     .post-content ul li {
@@ -282,6 +289,10 @@ ul#search__results {
 }
 
 @media (max-width: 839px) and (min-width: 480px) {
+    .sidebar {
+        height: 340px;
+    }
+
     div.profile, div.nav {
         padding: 30px;
         width: 40%;
@@ -300,7 +311,17 @@ ul#search__results {
 }
 
 @media (max-width: 479px) {
-    div.profile, div.nav {
+    .sidebar {
+        height: 260px;
+    }
+
+    div.profile {
+        padding: 10px;
+        width: 55%;
+        display: inline-table;
+    }
+
+    div.nav {
         padding: 10px;
         width: 30%;
         display: inline-table;
