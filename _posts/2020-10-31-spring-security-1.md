@@ -7,8 +7,7 @@ tags: [spring, basic, usage]
 
 ### 프로젝트 설정
 
-Spring Security와 Spring Web을 포함한 신규 프로젝트를 생성합니다.
-구성은 아래와 같습니다.
+Spring Security와 Spring Web을 포함한 신규 프로젝트를 생성합니다. 구성은 아래와 같습니다.
 
 ![initial](/images/201031/initial.PNG)
 
@@ -84,12 +83,12 @@ Spring Boot에서는 autoconfigure를 지원하기 떄문에 spring-security 의
 따라서 API를 직접 호출해보면 API에 자동으로 접근제어가 설정되어 있는 것을 확인하실 수 있습니다.
 다만 이러한 적용을 위해서 MockMvc에 springSecurity() 설정을 활성화 해줘야 동일한 환경에서 테스트할 수 있습니다.
 
-이후 `GET /api/current` API를 호출하면 200이 아닌 401(Unauthorized)가 돌아옵니다.
-다만 `POST /api/register` API를 호출하면 403(Forbidden)이 돌아오는데 이는 Spring Security의 설정이 기본적으로 CSRF를 활성화하고, POST method에 작동하기 때문입니다.[^2]
+이후 `GET /api/current` API를 호출하면 200이 아닌 401(Unauthorized)가 돌아옵니다. 
+다만 `POST /api/register` API를 호출하면 403(Forbidden)이 돌아오는데 이는 Spring Security의 설정이 기본적으로 CSRF를 활성화하고 POST method에 작동하기 때문입니다.[^2]
 
 
 #### CSRF란?
-[Cross Site Request Forgery(CSRF)](https://owasp.org/www-community/attacks/csrf#:~:text=Cross%2DSite%20Request%20Forgery%20(CSRF,which%20they're%20currently%20authenticated.))는 Server side에서 View를 제어하던 시절(Controller가 정말로 Controller이던 시절) 사용되던 보안 방식중 하나입니다. 지금처럼 API 제공을 위주로 하는 방식에서는 크게 중요하지는 않을 수 있으나, 이후 CORS와 함께 따로 다룰 예정입니다.
+[Cross Site Request Forgery(CSRF)](https://owasp.org/www-community/attacks/csrf#:~:text=Cross%2DSite%20Request%20Forgery%20(CSRF,which%20they're%20currently%20authenticated.))는 Server side에서 View를 제어하던 시절(Controller가 정말로 Controller이던 시절) 사용되던 보안 방식중 하나입니다. 지금처럼 API 제공을 위주로 하는 방식에서는 크게 중요하지는 않을 수 있으나 이후 CORS와 함께 따로 다룰 예정입니다.
 
 ### API의 접근 허용
 
@@ -114,8 +113,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 }
 ```
 
-(1): 기본 index 루트를 제외한 모든 요청에 대해 CSRF를 무시하도록 설정했습니다.
-(2): /api/register 경로에 대한 POST 요청에 대해서 익명 사용자만 접근 가능하도록 설정했습니다. ant matcher 대신 *.mvcMatchers(HttpMethod.POST, "/api/register")* 처럼 설정해도 동일하게 작동합니다.
+(1): 기본 index 루트를 제외한 모든 요청에 대해 CSRF를 무시하도록 설정했습니다. 
+(2): /api/register 경로에 대한 POST 요청에 대해서 익명 사용자만 접근 가능하도록 설정했습니다. 
+ant matcher 대신 *.mvcMatchers(HttpMethod.POST, "/api/register")* 처럼 설정해도 동일하게 작동합니다.
 
 authorizeRequests를 설정할 때 몇가지 주의점이 있습니다.
 - anyRequest()는 항상 마지막에 선언되어야 합니다.
@@ -149,9 +149,7 @@ public void registerMember_201() throws Exception {
 }
 ```
 
-여기까지가 기본적인 접근 제어 및 MockMvc를 통해서 Spring Security가 포함된 테스트 케이스를 동작하는 방법입니다. (덤으로 CSRF)
-
-영상 가이드: https://youtu.be/krBgmoHDqFQ (2020-11-07 18:15 공개)
+영상 가이드: https://youtu.be/krBgmoHDqFQ (2020-11-07 18:15 공개)  
 깃헙 저장소: https://github.com/CyanRYi/Sollabs-basic/releases/tag/spring-security-w1
 
 ---
