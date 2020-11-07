@@ -149,8 +149,8 @@ public void registerMember_201() throws Exception {
 }
 ```
 
-영상 가이드: https://youtu.be/krBgmoHDqFQ (2020-11-07 18:15 공개)  
-깃헙 저장소: https://github.com/CyanRYi/Sollabs-basic/releases/tag/spring-security-w1
+영상 가이드: [Youtube](https://youtu.be/krBgmoHDqFQ) 
+소스 저장소: [Github](https://github.com/CyanRYi/Sollabs-basic/releases/tag/spring-security-w1)
 
 ---
 
