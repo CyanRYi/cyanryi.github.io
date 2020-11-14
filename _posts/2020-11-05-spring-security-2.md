@@ -200,7 +200,7 @@ Content-Type: application/json
 
 등록된 사용자 정보는 아래와 같습니다. password는 bcrypt로 암호화되어 있으며, 항상 60자의 길이를 가집니다.
 
-![데이터](/images/201031/member.PNG)
+![데이터](/images/201114/member.PNG)
 
 ### Sign In(로그인)
 
@@ -336,7 +336,7 @@ public class SecurityConfigurationTests {
 
 ---
 
-[^1]: https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure How To Prevent 탭에서 확인하실 수 있습니다.
+[^1]: [OWASP](https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure) How To Prevent 탭에서 확인하실 수 있습니다.
 
 [^2] 요리할때 소금을 치듯이 값을 해싱하는 과정에서 추가해주는 양념으로 이해하시면 됩니다.
 
