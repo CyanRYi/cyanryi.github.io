@@ -113,8 +113,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 }
 ```
 
-(1): 기본 index 루트를 제외한 모든 요청에 대해 CSRF를 무시하도록 설정했습니다. 
-(2): /api/register 경로에 대한 POST 요청에 대해서 익명 사용자만 접근 가능하도록 설정했습니다. 
+> (1): 기본 index 루트를 제외한 모든 요청에 대해 CSRF를 무시하도록 설정했습니다.   
+> (2): /api/register 경로에 대한 POST 요청에 대해서 익명 사용자만 접근 가능하도록 설정했습니다. 
 ant matcher 대신 *.mvcMatchers(HttpMethod.POST, "/api/register")* 처럼 설정해도 동일하게 작동합니다.
 
 authorizeRequests를 설정할 때 몇가지 주의점이 있습니다.
