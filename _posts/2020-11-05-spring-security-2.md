@@ -9,7 +9,7 @@ tags: [spring, basic, usage]
 
  지난 시간에 설정한 DB 관련 항목에 추가적으로 설정합니다.
 
-1. resources/application.yml
+##### resources/application.yml
 
 ```yaml
 spring:
@@ -25,7 +25,7 @@ spring:
 
 기본 서버 구동을 위한 DB 설정입니다. File DB를 통해 영속성을 관리합니다.
 
-2. resources/application-test.yml
+##### resources/application-test.yml
 
 ```yaml
 spring:
@@ -44,7 +44,7 @@ spring:
 test 프로파일에서 In-Memory DB를 통해 구동시마다 새로운 DB를 사용하도록 합니다.(테스트 케이스의 멱등성을 유지) 
 이와 관련하여 필요한 DDL은 별도 sql을 통해 설정합니다.
 
-3. H2Configuration.java
+##### H2Configuration.java
 
 ```java
 @Configuration
@@ -319,7 +319,7 @@ public class SecurityConfigurationTests {
 }
 ```
 
-> (1): 이 부분이 존재하기에 이 테스트 클래스는 'test' Profile로 작동하게 됩니다. 없으면 기본(default) Profile로 작동하면서 application-test.yml을 적용하지 않을 겁니다.     
+> (1): 이 부분이 존재하기에 이 테스트 클래스는 'test' Profile로 작동하게 됩니다. 없으면 기본(default) Profile로 작동하면서 application-test.yml을 적용하지 않을 겁니다.
 > (2): 위에 작성한 sql문을 해당 테스트 케이스 동작 전에 실행하도록 하는 구문입니다. 예시는 `src/main/test/resources/sql/member.sql` 인 경우입니다.  
 > (3): formLogin이기 때문에 application/json이 아닌 application/x-www-form-urlencoded 를 content-type으로 사용하도록 했습니다.  
 > (4): 마찬가지로 고전적인 formLogin에서는 로그인 성공/실패시 Page 전환을 통해 결과를 알려주도록 되어 있습니다. Found는 302입니다. 
