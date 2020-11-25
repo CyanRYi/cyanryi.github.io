@@ -10,6 +10,7 @@ tags: [spring, basic, usage]
  지난 시간에 설정한 DB 관련 항목에 추가적으로 설정합니다.
 
 1. resources/application.yml
+
 ```yaml
 spring:
   datasource:
@@ -21,9 +22,11 @@ spring:
     hibernate:
       ddl-auto: update
 ```
+
 기본 서버 구동을 위한 DB 설정입니다. File DB를 통해 영속성을 관리합니다.
 
 2. resources/application-test.yml
+
 ```yaml
 spring:
   datasource:
@@ -36,12 +39,13 @@ spring:
     database: h2
     hibernate:
       ddl-auto: create-drop
-
 ```
+
 test 프로파일에서 In-Memory DB를 통해 구동시마다 새로운 DB를 사용하도록 합니다.(테스트 케이스의 멱등성을 유지) 
 이와 관련하여 필요한 DDL은 별도 sql을 통해 설정합니다.
 
 3. H2Configuration.java
+
 ```java
 @Configuration
 public class H2Configuration {
@@ -55,6 +59,7 @@ public class H2Configuration {
   }
 }
 ```
+
 H2 File DB는 동시에 하나의 커넥션만 연결이 가능합니다.   
 서버가 구동시에 TCP를 통해 터널링을 추가해줍니다. 서버를 구동한 뒤에 `jdbc:h2:tcp://localhost:9092/./target/h2db/db/spring-security` 로 접속이 가능합니다.  
 9092 이후는 application.yml에 설정된 file 경로입니다.
@@ -76,7 +81,7 @@ H2 File DB는 동시에 하나의 커넥션만 연결이 가능합니다.
 OWASP10 2017버전에서는 A3 - Sensitive Data Exposure(민감한 데이터의 노출) 의 하나로 약한 암호화 알고리즘 등을 언급합니다.   
 또한 그 대안으로 안전한 알고리즘을 추천합니다. 내용은 아래와 같습니다.[^1]
 
-> * Store passwords using strong adaptive and salted hashing functions with a work factor (delay factor), such as Argon2, scrypt, bcrypt or PBKDF2.   
+> Store passwords using strong adaptive and salted hashing functions with a work factor (delay factor), such as Argon2, scrypt, bcrypt or PBKDF2.
 
 다시 한번 강조하자면, **MD5, SHA1, SHA2 등의 알고리즘은 해당하지 않습니다.**
 
@@ -99,9 +104,9 @@ String이 CharSequence의 구현체이기 때문에 matches를 사용할 때는 
 SecurityConfiguration 내에 PasswordEncoder Bean을 생성하도록 method를 추가합니다.   
 여기서는 BCryptPasswordEncoder를 기본 생성자로 사용합니다. 적용되는 기본값은 아래와 같습니다.
 
-> salt: new SecureRandom()
-> strength: 10
-> algorithm: 2A
+- salt: new SecureRandom()
+- strength: 10
+- algorithm: 2A
 
 ```java
 @Bean
@@ -200,13 +205,13 @@ Content-Type: application/json
 
 등록된 사용자 정보는 아래와 같습니다. password는 bcrypt로 암호화되어 있으며, 항상 60자의 길이를 가집니다.
 
-![데이터](/images/201114/member.PNG)
+![데이터](/images/201105/member.PNG)
 
 ### Sign In(로그인)
 
 등록된 사용자로 로그인하기 위해서는 사용자를 조회해오는 과정이 필요합니다.
 
-이 과정에서 Spring Security에서는 내부적으로 많은 단계를 거치지만, 우리가 가장 인지하기 쉬운 곳은 [UserDetailsService](https://docs.spring.io/spring-security/site/docs/4.2.18.RELEASE/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html)입니다. [^3]
+이 과정에서 Spring Security에서는 내부적으로 많은 단계를 거치지만 우리가 가장 알기 쉬운 곳은 [UserDetailsService](https://docs.spring.io/spring-security/site/docs/4.2.18.RELEASE/apidocs/org/springframework/security/core/userdetails/UserDetailsService.html)입니다. [^3]
 
 loadUserByUsername 하나의 Method를 가지며, 여기서 말하는 Username이 우리가 흔히 말하는 로그인 ID(혹은 그와 같은 역할을 하는 Email 주소 등)입니다.
 
@@ -314,7 +319,7 @@ public class SecurityConfigurationTests {
 }
 ```
 
-> (1): 이 부분이 존재하기에 이 테스트 클래스는 'test' Profile로 작동하게 됩니다. 없으면 기본(default) Profile로 작동하면서 application-test.yml을 적용하지 않을 겁니다. 
+> (1): 이 부분이 존재하기에 이 테스트 클래스는 'test' Profile로 작동하게 됩니다. 없으면 기본(default) Profile로 작동하면서 application-test.yml을 적용하지 않을 겁니다.     
 > (2): 위에 작성한 sql문을 해당 테스트 케이스 동작 전에 실행하도록 하는 구문입니다. 예시는 `src/main/test/resources/sql/member.sql` 인 경우입니다.  
 > (3): formLogin이기 때문에 application/json이 아닌 application/x-www-form-urlencoded 를 content-type으로 사용하도록 했습니다.  
 > (4): 마찬가지로 고전적인 formLogin에서는 로그인 성공/실패시 Page 전환을 통해 결과를 알려주도록 되어 있습니다. Found는 302입니다. 
