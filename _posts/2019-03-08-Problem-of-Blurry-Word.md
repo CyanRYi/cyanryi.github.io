@@ -73,7 +73,7 @@ nor by the mental representations one might associate with them, but by how they
     
 > 의미론의 사용 이론에 따르면, 단어들은 그들이 지정하는 물건에 대한 참조나 그것과 연관될 수 있는 정신적 표현에 의해서 정의되는 것이 아니라 어떻게 사용되는지에 의해서 정의된다
 
-여기서 주장하는 것은 _단어가 어떤 **맥락**에서 어떤 **목적**을 가지고 사용되었는지가 그 단어를 의미있게 만든다_는 것이다.
+여기서 주장하는 것은 _단어가 어떤 **맥락**에서 어떤 **목적**을 가지고 사용되었는지가 그 단어를 의미있게 만든다_ 는 것이다.
 
 ---
 ### 언어라는 틀이 가진 기본적인 한계
@@ -100,7 +100,7 @@ _Giving **a lot of information clearly** and in a few words;brief but **comprehe
 
 {% highlight java %}
 public class 배 {
- // ship? pare? stomach? 의미의 누락이 모국어 여부와 무관함을 알 수 있다.
+ // ship? pear? 의미의 누락이 모국어 여부와 무관함을 알 수 있다.
 }
 {% endhighlight %}
 

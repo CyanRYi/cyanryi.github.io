@@ -2,6 +2,7 @@
 title: 워라밸은 퇴근시간의 문제가 아니다.
 category: hestory
 tags: [philosophy]
+hidden: true
 ---
 
 몇달 전에 페이스북에서 한참 '워라밸'에 관한 주제가 오갔던 적이 있다.   

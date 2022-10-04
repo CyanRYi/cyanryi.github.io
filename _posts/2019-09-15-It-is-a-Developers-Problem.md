@@ -2,6 +2,7 @@
 title: 누구나 알고 있지만 아무도 하지 않는 불편한 이야기
 category: hestory
 tags: [philosophy]
+hidden: true
 ---
 
 나도 분노조절장애 같은게 있는지, 갑자기 화딱지가 치밀어 올라서, 하루만에 글을 추가하게 된다.
