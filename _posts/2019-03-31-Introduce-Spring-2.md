@@ -2,6 +2,7 @@
 title: Spring framework를 대하는 자세(1) - Spring의 POJO
 category: spring
 tags: [spring]
+hidden: true
 ---
 
 토비의 스프링에서는 '개발자들이 스프링을 통해 얻게 되는 두 가지 중요한 가치[^1]' 라고 표현하는 두가지가 있다. 단순함에서 POJO를, 유연성에서 "항상 프레임워크 기반의 접근 방법을 사용해라"를 소개한다.

@@ -2,7 +2,6 @@
 title: Introduce Spring(0) - Prelude
 category: spring
 tags: [spring, basic]
-hidden: true
 ---
 
 Spring은 Java 생태계에서 높은 점유율을 가지고 있고, 국내에 한정해서는 더더욱 그렇다. 또한 그러면서도 사용자들에게 많이 사랑받고 있다[^1]. 문제는 수많은 Spring 생태계 내의 개발자에 비해 정작 Spring을 쓸 줄 아는 개발자는 거의 없다는 부분에 있다.
